@@ -6,6 +6,7 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background-image: linear-gradient(120deg, pink, rgb(250, 250, 250));
+  background-repeat: no-repeat;
 }
 a {
   text-decoration: none;
@@ -20,13 +21,17 @@ section {
   display: flex;
   background: white;
   width: 97%;
+  height: 100vh;
   margin: 20px;
   box-shadow: 0 0 1rem rgb(182, 128, 137);
+}
+.container {
+  height: 100%;
 }
 .asideLeft {
   width: 15%;
   padding: 10px;
-  height: 700px;
+  height: 100%;
 }
 .asideLeft h1 {
   margin: 20px;
@@ -49,7 +54,8 @@ section {
 }
 .asideMiddle {
   width: 30%;
-  height: 715px;
+  height: 100%;
+  display: flex;
 }
 .asideMiddle img {
   width: 100%;
@@ -66,7 +72,7 @@ section {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 720px;
+  height: 725px;
   background: linear-gradient(120deg, rgb(112, 2, 35), rgb(243, 209, 209));
   opacity: 0.5;
   width: 100%;
@@ -81,7 +87,6 @@ section {
 .title {
   display: flex;
   justify-content: center;
-  margin-left: 180px;
 }
 .subtitle h2 {
   text-transform: uppercase;
@@ -92,8 +97,21 @@ section {
   border-top: 2px solid black;
   margin-top: 12px;
 }
-.main-title {
-  margin-left: 180px;
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  padding-top: 40px;
+}
+.within_image {
+  display: none;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
 }
 .main-title h1 {
   font-size: 7rem;
@@ -107,7 +125,7 @@ section {
   margin: auto;
 }
 .search {
-  margin: 50px 0px 90px 180px;
+  margin: 50px 0px;
   width: 419px;
   box-shadow: 4px 10px 1rem rgb(236, 191, 198);
 }
@@ -137,7 +155,7 @@ section {
 }
 .video-holder {
   width: 420px;
-  margin: 20px 0px 0px 180px;
+  margin: 20px 0px 0px 0px;
   display: flex;
 }
 .video-holder img {
@@ -165,7 +183,7 @@ section {
 }
 .second-container {
   width: 150px;
-  height: 720px;
+  height: 100%;
   position: relative;
   background: rgb(252, 251, 251);
 }
@@ -219,4 +237,30 @@ div i.ti-arrow-down:hover {
 div i.ti-control-play:hover {
   background: rgb(204, 114, 129);
   color: white;
+}
+@media (max-width: 1310px) {
+  .second-container span {
+    display: flex;
+    flex-direction: column;
+  }
+  .second-container span i {
+    padding: 10px;
+  }
+  .second-container {
+    width: 100px;
+  }
+}
+@media (max-width: 1000px) {
+  .within_image {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .asideMiddle {
+    display: none;
+  }
+  .asideRight {
+    width: 85%;
+  }
 }
