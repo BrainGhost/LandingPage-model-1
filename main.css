@@ -26,9 +26,7 @@ section {
   margin: 20px;
   box-shadow: 0 0 1rem rgb(182, 128, 137);
 }
-.container {
-  height: 100%;
-}
+
 .asideLeft {
   width: 15%;
   padding: 10px;
@@ -93,14 +91,16 @@ section {
 }
 .title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 80%;
 }
 .subtitle h2 {
   text-transform: uppercase;
   margin: 0 5px;
+  font-size: 1.5vw;
 }
 .line {
-  width: 145px;
+  width: 35%;
   border-top: 2px solid black;
   margin-top: 12px;
 }
@@ -123,7 +123,7 @@ section {
   align-items: center;
 }
 .main-title h1 {
-  font-size: 7rem;
+  font-size: 10vw;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -145,17 +145,20 @@ section {
 }
 .search {
   margin: 50px 0px;
-  width: 419px;
+  width: 80%;
   box-shadow: 4px 10px 1rem rgb(236, 191, 198);
+  display: flex;
+  justify-content: flex-end;
 }
 .search input {
-  width: 290px;
+  width: 70%;
   background: white;
   padding: 10px;
   border: none;
   outline: none;
 }
 .search span.ok {
+  width: 15%;
   background: rgb(212, 151, 161);
   padding: 10px 30px;
   color: rgb(255, 255, 255);
@@ -167,9 +170,10 @@ section {
   color: rgb(212, 151, 161);
 }
 .search span.sea {
+  width: 15%;
   background: white;
   font-size: 1.2rem;
-  padding: 8px 0px 8px 20px;
+  padding: 8px 10px;
   color: rgb(22, 15, 16);
 }
 .video-holder {
@@ -327,29 +331,83 @@ div i.ti-control-play:hover {
     display: flex;
     flex-direction: column;
   }
-  .video-holder img {
+  .video-holder .video {
     width: 100%;
     height: 180px;
-    margin-right: 0;
     margin-bottom: 20px;
+  }
+  .video-holder img {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
     object-fit: none;
   }
   .video-holder i {
-    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
   }
 }
 @media (max-width: 770px) {
+  body {
+    height: 100%;
+  }
+  .main-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-container::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    margin: 0;
+    box-shadow: 0 0 0 rgb(182, 128, 137);
+  }
+  .asideLeft > div,
+  .location {
+    display: none;
+  }
+  .asideLeft {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 0 10px lightgray;
+  }
+  .asideLeft > h1 {
+    margin: 0 20px;
+  }
+  .main-container {
+    padding: 0;
+    padding-top: 15vh;
+  }
+  .asideRight {
+    width: 100%;
+  }
   .main-title,
-  .video-holder {
-    width: 420px;
+  .video-holder,
+  .search {
+    max-width: 420px;
   }
   .main-title p {
     font-size: 1rem;
   }
   .second-container {
     display: none;
+  }
+  .search span.ok {
+    padding: 10px 10px;
+  }
+
+  .search span.sea {
+    font-size: 1rem;
+    padding: 10px 2px;
+  }
+  .subtitle h2 {
+    font-size: 3vw;
   }
 }
